@@ -4,6 +4,10 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 const config = {
     entry: "./src/index.js",
+    output: {
+        filename: '[name].bundle.js',
+        path: __dirname,
+    },
     module: {
         rules: [
             {
@@ -29,7 +33,7 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './src/index.html',
             fileName: './index.html'
         }),
         new CopyPlugin({
